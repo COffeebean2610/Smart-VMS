@@ -20,7 +20,7 @@ async def run_phase2_tests():
     print("==========================================")
 
     # Test 1: DPAPI Secret Encryption / Decryption
-    secret = "mongodb+srv://myuser:mypassword123@cluster0.mongodb.net/smart_vms"
+    secret = "***"
     encrypted = encrypt_secret(secret)
     decrypted = decrypt_secret(encrypted)
     print(f"[TEST 1] Encrypted format: {encrypted[:25]}...")
