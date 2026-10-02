@@ -1,0 +1,111 @@
+# ==============================================================================
+# SMART VMS MASTER .GITIGNORE
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Environment & Secrets
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.json
+
+# ------------------------------------------------------------------------------
+# 2. Python
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.venv
+venv/
+ENV/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ------------------------------------------------------------------------------
+# 3. Node / Frontend
+# ------------------------------------------------------------------------------
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------------------------------------------
+# 4. Local Media & Storage
+# ------------------------------------------------------------------------------
+backend/storage/recordings/*
+backend/storage/snapshots/*
+backend/storage/thumbnails/*
+!backend/storage/recordings/.gitkeep
+!backend/storage/snapshots/.gitkeep
+!backend/storage/thumbnails/.gitkeep
+storage/recordings/*
+storage/snapshots/*
+storage/thumbnails/*
+!storage/recordings/.gitkeep
+!storage/snapshots/.gitkeep
+!storage/thumbnails/.gitkeep
+
+# ------------------------------------------------------------------------------
+# 5. Desktop Packaging & Executables
+# ------------------------------------------------------------------------------
+release/
+out/
+backend/dist/
+backend/build/
+*.spec
+*.exe
+*.app
+*.dmg
+*.deb
+*.rpm
+*.AppImage
+*.msi
+
+# ------------------------------------------------------------------------------
+# 6. IDE / System Files
+# ------------------------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+

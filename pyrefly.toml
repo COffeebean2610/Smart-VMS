@@ -1,0 +1,16 @@
+# Project files
+project-includes = ["backend/**/*.py", "frontend/**/*.py", "backend/*.py"]
+
+# Import search path
+search-path = [
+    ".",
+    "backend",
+    "backend/app",
+    "backend/venv/Lib/site-packages"
+]
+
+# Force Pyrefly to use your project's virtual environment
+python-interpreter-path = "backend/venv/Scripts/python.exe"
+
+# Let Pyrefly discover installed packages from that interpreter
+skip-interpreter-query = false

@@ -1,0 +1,70 @@
+{
+  "name": "smart-vms-desktop",
+  "version": "1.0.0",
+  "description": "Smart Video Management System (VMS) Desktop Application",
+  "main": "electron/main.js",
+  "scripts": {
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && .\\venv\\Scripts\\python.exe build_backend.py",
+    "electron:start": "electron .",
+    "electron:dev": "cross-env NODE_ENV=development electron .",
+    "dist": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.smartvms.desktop",
+    "productName": "Smart VMS",
+    "directories": {
+      "output": "dist/electron"
+    },
+    "files": [
+      "electron/**/*",
+      "frontend/dist/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "dist/backend",
+        "to": "backend",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "executableName": "SmartVMS"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Smart VMS",
+      "uninstallDisplayName": "Smart VMS",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerHeaderIcon": "build/icon.ico"
+    },
+    "portable": {
+      "artifactName": "SmartVMS-Portable.exe"
+    }
+  },
+  "devDependencies": {
+    "electron": "^31.2.0",
+    "electron-builder": "^24.13.3"
+  }
+}
